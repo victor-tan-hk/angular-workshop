@@ -1,0 +1,15 @@
+<div>
+  <p> Name : {{myEmployee.name}}</p>
+  <p> Age : {{myEmployee.age}}</p>
+  <p> Role : {{myEmployee.role}}</p>
+  <p> Email : {{myEmployee.email}}</p>
+
+  <div [ngSwitch]="myEmployee.role">
+    <div *ngSwitchCase="'Admin'">
+        <p> OS used : {{myEmployee.os}}</p>
+    </div>
+    <div *ngSwitchCase="'Developer'">
+        <p> Languages developed : {{myEmployee.languages}}</p>
+    </div>    
+  </div>  
+</div>

@@ -1,0 +1,13 @@
+
+<div *ngIf="showModifyButton">
+    <button type="button" (click)="showList=false">Modify selected employee</button>
+</div>    
+
+<div *ngIf="showList">
+    <h1>Employee List</h1>
+    <app-employee-detail *ngFor="let employee of employeeList$ | async; let i = index" [myEmployee]="employee" (click)="onSelectEmployee(i)"></app-employee-detail>
+</div>    
+
+<div *ngIf="!showList">
+    <app-employee-modify [myEmployee]="selectedEmployee" (modifiedEmployee)="showList=true;showModifyButton=false"></app-employee-modify>
+</div>    

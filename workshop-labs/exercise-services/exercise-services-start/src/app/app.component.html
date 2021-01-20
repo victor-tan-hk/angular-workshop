@@ -1,0 +1,18 @@
+<p>Employee role</p>
+<form>
+  <input type="radio" name="role" value="Developer" [(ngModel)]="employeeRole">Developer<br>
+  <input type="radio" name="role" value="Admin" [(ngModel)]="employeeRole"> Administrator<br>
+</form>
+
+<button type="button" (click)="showEmployeeForm=!showEmployeeForm">Show employee form</button>
+
+<app-employee-form [myRole]="employeeRole" (createdEmployee)="onCreateEmployee($event)" *ngIf="showEmployeeForm"></app-employee-form>
+
+<div>
+    <button type="button" (click)="showEmployeeList=!showEmployeeList">Show employee list</button>
+
+    <div *ngIf="showEmployeeList">
+      <h1>Employee List</h1>
+      <app-employee-detail *ngFor="let employee of employeeList" [myEmployee]="employee"></app-employee-detail>
+    </div>
+</div>

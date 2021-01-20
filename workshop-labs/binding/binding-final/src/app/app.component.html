@@ -1,0 +1,28 @@
+<h1> My first Angular app </h1>
+<h2 class="main"> This app is hosted in {{ myPlace }} </h2>
+<p class="main" [class]="myfirstTextBoxText.indexOf('cat') >= 0 ? 'large' : 'small'"> There are {{2 + 1}} languages that I like: {{ 'Python, ' + getFixedString()}}</p>
+<p class="main" [class]="containsDog() ? 'large' : 'small'" #myParagraph>Programming is a fun activity</p>
+
+<button type="button" name="ImportantButton" (click)="onFirstButtonClick($event)" [disabled]="disableFirstButton" #myFirstButton>First button</button>
+<br>
+First text box
+<input type="text" (input)="myfirstTextBoxText = $event.target.value">
+<br><br>
+
+<button type="button" #mySecondButton (click)="onSecondButtonClick()">Second button</button>
+<br>
+Second text box
+<input type="text" (keyup)="0" #mySecondTextBox>
+<br><br>
+
+<button type="button" (click)="onThirdButtonClick(myThirdTextBox)">Third button</button>
+<br>
+Third text box
+<input type="text" (keyup)="0" #myThirdTextBox>
+<br><br>
+
+<p>Text entered in first text box: {{myfirstTextBoxText}} </p>
+<p>Text in first button: {{myFirstButton.innerHTML}} </p>
+<p>Text entered in second text box: {{mySecondTextBox.value}} </p>
+
+

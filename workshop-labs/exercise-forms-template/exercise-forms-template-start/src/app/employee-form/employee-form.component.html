@@ -1,0 +1,30 @@
+<h1> Form for {{myRole}}</h1>
+
+<form>
+  Name:<br>
+  <input type="text" name="name" (input)="myEmployee.name=$event.target.value">
+  <br>
+
+  Age:<br>
+  <input type="number" name="age" (input)="myEmployee.age=$event.target.value">
+  <br>
+  <div [ngSwitch]="myRole">
+    <div *ngSwitchCase="'Admin'">
+        OS used:<br>
+        <input type="text" name="os" (input)="myEmployee.os=$event.target.value">
+        <br><br>
+    </div>
+    <div *ngSwitchCase="'Developer'">
+        Languages developed in:<br>
+        <input type="text" name="language" (input)="myEmployee.languages=$event.target.value">
+        <br><br>
+    </div>    
+  </div>  
+
+  <button type="button" (click)="onAddRecord()">Add record</button>
+
+</form> 
+
+
+
+

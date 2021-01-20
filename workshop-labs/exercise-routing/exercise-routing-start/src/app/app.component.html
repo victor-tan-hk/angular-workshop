@@ -1,0 +1,21 @@
+<p>Employee role</p>
+<form>
+  <input type="radio" name="role" value="Developer" [(ngModel)]="employeeRole">Developer<br>
+  <input type="radio" name="role" value="Admin" [(ngModel)]="employeeRole"> Administrator<br>
+  <div class="important">
+    Important OS or languages (separate by space):<br>
+    <input type="text" required name="important" #importantstuff="ngModel" [(ngModel)]="highlightService.importantStuff" >
+  </div>
+</form>
+
+<button type="button" (click)="showEmployeeForm=!showEmployeeForm">Show employee form</button>
+
+<app-employee-form [myRole]="employeeRole" (createdEmployee)="onCreateEmployee($event)" *ngIf="showEmployeeForm"></app-employee-form>
+
+<div>
+    <button type="button" (click)="showEmployeeList=!showEmployeeList">Show employee list</button>
+
+    <div *ngIf="showEmployeeList">
+        <app-employee-display></app-employee-display>
+    </div>
+</div>

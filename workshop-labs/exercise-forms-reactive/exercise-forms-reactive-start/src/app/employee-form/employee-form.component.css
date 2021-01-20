@@ -1,0 +1,17 @@
+
+.employee-age .ng-valid,
+.employee-name .ng-valid,
+.employee-email .ng-valid,
+.employee-os .ng-valid,
+.employee-languages .ng-valid
+{
+background-color: green;
+}
+.employee-name .ng-invalid,
+.employee-age .ng-invalid,
+.employee-email .ng-invalid,
+.employee-os .ng-invalid,
+.employee-languages .ng-invalid
+{
+background-color: pink;
+}

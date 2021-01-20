@@ -1,0 +1,12 @@
+<h1> My first Angular app </h1>
+<h2> This app is hosted in {{ myPlace }} </h2>
+<p> There are {{2 + 1}} languages that I like: {{ 'Python, ' + getFixedString()}}</p>
+<p>Programming is a fun activity</p>
+
+<button type="button" name="ImportantButton" (click)="onFirstButtonClick($event)" [disabled]="disableFirstButton">First button</button>
+<br>
+First text box
+<input type="text" (input)="myfirstTextBoxText = $event.target.value">
+<br><br>
+
+<p>Text entered in first text box: {{myfirstTextBoxText}} </p>

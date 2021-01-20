@@ -1,0 +1,24 @@
+<div class="stock-container">
+  <div class="name">
+    {{stock.name + ' (' + stock.code + ')'}}
+  </div>
+
+  <div class="price" 
+    [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+    $ {{stock.price}}
+  </div>
+
+  <button (click)="toggleFavorite()" *ngIf="!stock.favorite">
+    Add to Favorite
+  </button>
+  <br>
+
+  <div *ngIf="stock.isPositiveChange(); else notGood">
+    Stock price has increased. Great !
+  </div>
+  
+  <ng-template #notGood>
+    Stock price has decreased. Awful !
+  </ng-template>
+
+</div>

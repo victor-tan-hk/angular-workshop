@@ -1,0 +1,68 @@
+<h1> Modify form for {{myEmployee.name}}</h1>
+
+<form (ngSubmit)="modifyEmployee(employeeForm)" #employeeForm="ngForm">
+
+  <div class="employee-age">
+      Age:<br>
+      <input type="number"  name="employeeAge" required #employeeAge="ngModel" [(ngModel)]="myEmployee.age" >
+  </div>
+
+  <div *ngIf="employeeAge.errors && employeeAge.errors.required">
+      Employee age is mandatory
+  </div>  
+  
+  <div class="employee-email">
+    Email:<br>
+    <input type="text" required name="employeeEmail" email  #employeeEmail="ngModel" [(ngModel)]="myEmployee.email" >
+  </div>
+
+  <div *ngIf="employeeEmail.dirty && employeeEmail.invalid">
+    <div *ngIf="employeeEmail.errors.required">
+      Employee email  is mandatory
+    </div>
+    <div *ngIf="employeeEmail.errors.email">
+      Employee email is incorrect format
+    </div>
+  </div>  
+
+  <div [ngSwitch]="myEmployee.role">
+    <div *ngSwitchCase="'Admin'">
+      
+      <div class="employee-os">
+          OS used:<br>
+          <input type="text" required maxlength="10" name="employeeOs" #employeeOs="ngModel" [(ngModel)]="myEmployee.os">
+          <br>
+      </div>
+
+      <div *ngIf="employeeOs.dirty && employeeOs.invalid">
+        OS must be specified
+      </div>  
+
+    </div>
+    <div *ngSwitchCase="'Developer'">
+      
+      <div class="employee-languages">
+          Languages developed in:<br>
+          <input type="text" required minlength="4" name="employeeLanguages" #employeeLanguages="ngModel" [(ngModel)]="myEmployee.languages">
+          <br>
+      </div>
+
+      <div *ngIf="employeeLanguages.dirty && employeeLanguages.invalid">
+        <div *ngIf="employeeLanguages.errors.required">
+          Languages must be specified
+        </div>
+        <div *ngIf="employeeLanguages.errors && employeeLanguages.errors.minlength">
+          Languages must be at least 4 characters
+        </div>
+      </div>        
+
+    </div>    
+  </div>  
+
+  <button type="submit">Modify record</button>
+
+</form> 
+
+
+
+

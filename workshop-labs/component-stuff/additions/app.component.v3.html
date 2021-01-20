@@ -1,0 +1,12 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <br>
+  <h2>Buttons in root component</h2>
+  <button (click)="changeStockObject()">Change Stock</button>
+  <button (click)="changeStockPrice()">Change Price</button>
+  <br><br>
+  <app-stock-item [stock]="stockObj" (toggleFavorite)="onToggleFavorite($event)">
+  </app-stock-item>
+</div>

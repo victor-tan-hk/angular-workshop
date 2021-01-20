@@ -1,0 +1,33 @@
+<div class="stock-container" *ngFor="let stock of stocks; index as i">
+
+  <div class="name">
+    {{stock.name + ' (' + stock.code + ')'}}
+  </div>
+
+  <div [ngSwitch]="stock.getCategory()">
+    <p *ngSwitchCase="'cheap'">{{actions[0]}}</p>
+    <p *ngSwitchCase="'medium'">{{actions[1]}}</p>
+    <p *ngSwitchCase="'expensive'">{{actions[2]}}</p>
+    <p *ngSwitchDefault> Unrecognized category </p>
+  </div>
+
+  <div class="price" 
+    [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+    $ {{stock.price}}
+  </div>
+
+  <button (click)="toggleFavorite(i)" 
+    [disabled]="stock.favorite">
+    Add to Favorite
+  </button>
+  <br>
+  
+  <div *ngIf="stock.isPositiveChange(); else notGood">
+    Stock price has increased. Great !
+  </div>
+  
+  <ng-template #notGood>
+    Stock price has decreased. Awful !
+  </ng-template>  
+
+</div>
