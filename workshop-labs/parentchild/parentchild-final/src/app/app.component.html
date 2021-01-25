@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    Parent Component
+  </h1>
+  <form>
+    Enter a new value for parent variable :
+    <input type="text" (input)="changeParentVariable($event)">
+  </form>
+  <br>
+  <p> Value received from child component : {{ valueFromChild }}</p>
+  <br>
+  <app-child [getFromParent]="parentVariable"
+  (sendValue)="receiveFromChild($event)"
+  ></app-child>
+</div>

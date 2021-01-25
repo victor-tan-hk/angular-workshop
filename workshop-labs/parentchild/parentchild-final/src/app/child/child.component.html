@@ -1,0 +1,13 @@
+<div style="text-align:center">
+    <h1>
+      Child Component
+    </h1>
+    <br>
+    <p> Value received from parent is : {{ getFromParent }}</p>
+    <form>
+        Enter a new value to pass to parent component :
+        <input type="text" (input)="newValueChange($event)">
+      </form>
+    
+    <br>
+  </div>
