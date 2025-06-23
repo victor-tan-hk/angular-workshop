@@ -14,9 +14,9 @@ import { Employee } from './Employee';
 
 export class AppComponent {
 
-  // initial default value 100
-  // so all employees are listed
-  ageLimit: number = 100;
+  buttonMessage: string = 'Show table contents';
+
+  showTable: boolean = false;
 
   employees: Employee[] = [];
 
@@ -29,9 +29,14 @@ export class AppComponent {
     this.employees.push(new Employee("Noah",50,true));
   }
 
-  setNewLimit(val: string) {
-    this.ageLimit = parseInt(val); 
-  }
+  flipTableStatus() {
+    if (this.buttonMessage === 'Show table contents')
+      this.buttonMessage = 'Hide table contents';
+    else   
+    this.buttonMessage = 'Show table contents';
 
+    this.showTable = !this.showTable;
+
+  }
 
 }

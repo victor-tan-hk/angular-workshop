@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FormsModule in order to 
+// use NgModel
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -14,25 +16,30 @@ export class AppComponent {
 
   initialValue = 'cat';
 
-  secondBoxContent = '';
-  thirdBoxContent = '';
+  firstTextFieldContent = '';
+  secondTextFieldContent = '';
 
+  /*   Constructor is called when component is 
+    loaded */
   constructor() {
-    this.resetTextBoxes();
+    this.resetTextFields();
   }
 
-  // Convert the content of the third text box into upper case
-  processThirdBox(boxContent: string) {
-    this.thirdBoxContent = boxContent.toLocaleUpperCase();
+  processFirstTextField(hie: HTMLInputElement) {
+    this.firstTextFieldContent = hie.value;
   }
 
-  resetTextBoxes() {
-    
-    this.secondBoxContent = this.initialValue;
-    this.thirdBoxContent = this.initialValue;
+  resetTextFields() {
+    this.firstTextFieldContent = this.initialValue;
+
+    /*   When secondTextFieldContent is changed
+     the updated value is immediately
+     reflected into the text field
+     due to NgModel two way binding without the need for 
+     additoinal property binding */
+
+    this.secondTextFieldContent = this.initialValue;
 
   }
-
-
 
 }

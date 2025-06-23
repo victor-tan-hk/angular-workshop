@@ -4,7 +4,6 @@ import { FirstChildComponent } from './first-child/first-child.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, FirstChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

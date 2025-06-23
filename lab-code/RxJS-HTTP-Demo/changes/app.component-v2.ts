@@ -1,15 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+
 import { FakeAPIService } from './fakeAPI.service';
 import { Photo } from './photo';
 import { Post } from './post';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, JsonPipe],
+  imports: [JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

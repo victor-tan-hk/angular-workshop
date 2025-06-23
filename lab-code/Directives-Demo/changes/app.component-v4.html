@@ -1,6 +1,6 @@
 <h1> My first Angular app </h1>
 
-<h4> Displaying items from simple array in a list without ngFor </h4>
+<h4> Displaying items from simple array in a list without &#64;for </h4>
 <ul>
   <li>Animal : {{ animals[0] }}</li>
   <li>Animal : {{ animals[1] }}</li>
@@ -8,14 +8,13 @@
   <li>Animal : {{ animals[3] }}</li>
 </ul>
 
-<h4> Displaying items from simple array in a list with ngFor </h4>
+<h4> Displaying items from simple array in a list with &#64;for </h4>
 
 <ul>
-  <!-- animal is a template input variable -->
-  <li *ngFor="let animal of animals">
-    <!-- We can access the template input variable anywhere within the nested HTML -->
-    Animal : {{ animal }}
-  </li>
+    <!-- animal is a template input variable -->
+    @for (animal of animals; track animal) {
+      <li>Animal : {{ animal }}</li>
+    }
 </ul>
 
 <h4> Displaying items from an array of objects within a table </h4>
@@ -29,10 +28,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of employees">
-      <td>{{emp.name}}</td>
-      <td>{{emp.age}}</td>
-      <td>{{emp.isMarried ? 'married':'single'}}</td>
-    </tr>
-  </tbody>
+
+    @for (emp of employees; track emp) {
+        <tr>
+          <td>{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td>{{emp.isMarried ? 'married':'single'}}</td>
+        </tr>
+      }
+      @empty {
+        <tr>No employees in array</tr>
+      }
+
+   </tbody>
 </table>
+
+<br>
+
+<button (click)="removeEmployee()">Remove an employee</button>

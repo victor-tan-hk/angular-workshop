@@ -14,7 +14,6 @@ import { FirstChildComponent } from './first-child/first-child.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [FirstChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

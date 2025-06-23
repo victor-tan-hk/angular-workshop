@@ -1,27 +1,37 @@
-<h1> Employee app </h1>
+<h1> Demonstrating &#64;switch with &#64;case </h1>
 
-<button type="button" (click)="flipTableStatus()">{{buttonMessage}}</button>
-<br>
-<br>
+<label for="animal">Animal name : </label>
+<input type="text" id="animal" name="animal" [(ngModel)]="animal">
+
+@switch (animal) {
+  @case('cat') 
+    { <p>Thats a moody one !</p> } 
+  @case('dog') 
+    { <p>Thats a furry one !</p> }
+  @case('tiger') 
+    { <p>Thats a dangerous one !</p> }
+  @default 
+    { <p>Never heard of that animal before</p> }
+}
 
 
-<table>
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Marital Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ng-container *ngIf="showTable">
-            <tr *ngFor="let emp of employees;let i=index;">
-                <td>{{i+1}}</td>
-                <td>{{emp.name}}</td>
-                <td>{{emp.age}}</td>
-                <td>{{emp.isMarried ? 'married':'single'}}</td>
-            </tr>
-        </ng-container>
-    </tbody>
-</table>
+
+<label for="cars">Choose a car:</label>
+
+<select [(ngModel)]="selectedCar">
+    <option *ngFor="let car of cars;" [value]="car">{{car}}</option>
+</select>
+
+@switch (selectedCar) {
+  @case('Jaguar') 
+    { <p>Thats a British car !</p> } 
+  @case('Toyota') 
+    { <p>Thats a Japanese car !</p> }
+  @case('Renault') 
+    { <p>Thats a French car !</p> }
+  @case('Mercedes') 
+    { <p>Thats a German car !</p> }    
+  @default 
+    { <p>Never heard of that car before</p> }
+}
+

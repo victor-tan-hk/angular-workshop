@@ -1,12 +1,41 @@
 <h1> My first Angular app </h1>
 
-<h4> Demonstrating basic ngIf </h4>
+<h4> Demonstrating basic &#64;if syntax </h4>
 
 First checkbox <input type="checkbox" (input)="showFirst=!showFirst" />
 
-<!-- Using ngIf to conditionally show/hide the <p> text -->
-<p *ngIf="showFirst">First checkbox is ticked: using ngIf</p>
+@if (showFirst) {
+  <p>First checkbox is ticked</p>
+}
 
-<!-- Using hidden property to conditionally show/hide the <p> text -->
-<p [hidden]="!showFirst">First checkbox is ticked: using [hidden]</p>
+<h4> Demonstrating &#64;if &#64;else syntax  </h4>
+
+Second checkbox <input type="checkbox" (input)="showSecond=!showSecond" />
+
+@if (showSecond) {
+  <p>Second checkbox is ticked</p>
+}
+@else {
+  <p>Second checkbox is NOT ticked</p>
+}
+
+<h4> Demonstrating &#64;if &#64;else if &#64;else syntax   </h4>
+
+<!-- Standard banana-in-the-box syntax using ngModel 
+to perform two way binding -->
+<label for="agebox">Enter your age:</label><br>
+<input type="number" id="agebox" name="agebox" [(ngModel)]="age">
+
+@if (age > 0 && age < 20) {
+  <p>You are young</p>
+} @else if (age >= 20 && age < 40) {
+  <p>You are middle aged</p>
+} @else if (age >= 40 && age < 60) {
+  <p>You are senior</p>
+} @else if (age >= 60 && age < 120) {
+  <p>You are old</p>
+} @else {
+  <p>Age value is invalid</p>
+}
+
 

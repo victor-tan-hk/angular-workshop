@@ -1,27 +1,5 @@
-<h1>Demonstrating Services</h1>
+<h1>Demonstrating Services are singleton</h1>
 
-<button type="button" (click)="getProducts()">Get Products</button>
-
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-          @for (product of products; track product) {
-            <tr>
-              <td>{{product.productID}}</td>
-              <td>{{product.name}}</td>
-              <td>{{product.price}}</td>
-            </tr>
-          }
-        </tbody>
-    </table>
-</div>
 
 <app-first-child></app-first-child>
 

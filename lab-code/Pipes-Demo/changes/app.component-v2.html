@@ -1,0 +1,16 @@
+<h1>Demonstrating decimal pipe</h1>
+
+<p>Original number : {{ firstNum }} </p>
+
+<!-- Using default settings
+Max digits after decimal point: 3 -->
+<p>Original number with pipe default settings : {{ firstNum | number }} </p>
+
+<p>Max 2 digits after decimal point : {{ firstNum | number : '1.1-2'}} </p>
+<p>Max 4 digits after decimal point : {{ firstNum | number : '1.1-4'}} </p>
+<p>No digits after decimal point : {{ firstNum | number : '1.0-0'}} </p>
+
+<p>Original number : {{ secondNum }} </p>
+<p>Min 3 digits before decimal point : {{ secondNum | number : '3.1-3'}} </p>
+<p>Min 5 digits before decimal point and no digits after decimal point : {{ secondNum | number : '5.0-0'}} </p>
+

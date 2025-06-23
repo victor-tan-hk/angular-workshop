@@ -9,12 +9,27 @@
 <button (click)="myChild.decCounter()">Decrement</button>
 
 <!-- Directly access a property from the child component
-Removes the need to emit an output event containing that property
-as we did earlier -->
+     Removes the need to emit an output event containing that property
+     as we did earlier -->
 <p>Text from child : {{myChild.childText}}</p>
 
-<!-- Removed the textChanged event binding from the child component -->
-<!-- Use the myChild template reference variable to directly access the child component -->
+<!-- In the child component, we have 2 bindings:
+ 
+a) Binding parent property (parentCounter) to 
+ child property (ChildCounter) is marked with
+ the @Input decorator 
 
-<app-first-child #myChild [childCounter]="parentCounter" (counterChanged)="parentCounter=$event"></app-first-child>
+b) Event binding where the event is counterChanged
+EventEmitter object marked with @Output decorator
+and $event is value in the emit method call
+which is directly assigned to parentCounter property 
 
+We also use the myChild template reference variable 
+to directly access the child component
+
+-->
+
+<app-first-child #myChild 
+[childCounter]="parentCounter" 
+(counterChanged)="parentCounter=$event">
+</app-first-child>

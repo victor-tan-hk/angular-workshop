@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class BasicService {
 
-  myNumber : number = 10;
+  myNumber = 10;
 
   setNum(newNum: number) {
     this.myNumber = newNum;

@@ -4,23 +4,33 @@
 <form>
 
   <label for="tf1">First text field :</label><br>
+
+  <!-- We pass the $event object as the argument to the component 
+   method in the event binding template statement -->
   <input type="text" id="tf1" (input)="processFirstTextField($event)">
   
   <br>
   <br>
 
   <label for="tf2">Second text field :</label><br>
+
+  <!-- We pass the $event object as the argument to the component 
+   method in the event binding template statement -->  
   <input type="text" id="tf2" (input)="processSecondTextField($event)">
 
   <br>
   <br>
 
+  <!-- We pass the $event object as the argument to the component 
+   method in the event binding template statement -->    
   <input type="checkbox" id="progLang" value="Angular" (input)="processCheckBox($event)">
   <label for="progLang"> I love Angular !</label>
   
   <br>
   <br>
 
+  <!-- We pass the $event object as the argument to the component 
+   method in the event binding template statement -->    
   <button type="button" (click)="processNormalButton($event)">Click Me!</button>
 
 </form>

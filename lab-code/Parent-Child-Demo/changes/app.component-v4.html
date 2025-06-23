@@ -7,8 +7,26 @@
 
 <p>Text from child : {{childText}}</p>
 
-<!-- Event binding results in parentCounter being updated with the value in the event coming up from the child -->
-<!-- Subsequently, property binding sends the updated value in parentCounter to childCounter -->
+<!-- In the child component, we have 3 bindings:
+ 
+a) Binding parent property (parentCounter) to 
+ child property (ChildCounter) is marked with
+ the @Input decorator 
 
-<app-first-child [childCounter]="parentCounter" (textChanged)="processChangeFromChild($event)" (counterChanged)="parentCounter=$event"></app-first-child>
+b) Event binding where the event is textChanged
+EventEmitter object marked with @Output decorator
+and $event is value in the emit method call
+which is sent as argument to processChangeFromChild
+in parent component 
 
+c) Event binding where the event is counterChanged
+EventEmitter object marked with @Output decorator
+and $event is value in the emit method call
+which is directly assigned to parentCounter property 
+
+-->
+<app-first-child 
+[childCounter]="parentCounter" 
+(textChanged)="processChangeFromChild($event)"
+(counterChanged)="parentCounter=$event">
+</app-first-child>

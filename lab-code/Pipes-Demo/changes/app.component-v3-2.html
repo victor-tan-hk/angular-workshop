@@ -1,0 +1,15 @@
+<h1>Demonstrating Currency Pipe</h1>
+
+<h3> Formatting currency based on locale</h3>
+
+<!-- If no locale is specified, the default is US -->
+<p> Showing amount using default locale of US : {{firstNum | currency : 'EUR': 'symbol' : '3.1-3' }} </p>
+
+<p> Showing amount using France as locale : {{firstNum | currency : 'EUR': 'symbol' : '3.1-3' : 'fr' }} </p>
+
+<p> Showing amount using Hindi as locale : {{firstNum | currency : 'EUR': 'symbol' : '3.1-3' : 'hi' }} </p>
+
+<p> Showing amount using Arabic as locale : {{firstNum | currency : 'EUR': 'symbol' : '3.1-3' : 'ar' }} </p>
+
+<p> Showing amount using Arabic as locale : {{firstNum | currency : 'SAR': 'symbol' : '3.1-3' : 'ar' }} </p>
+

@@ -1,13 +1,9 @@
 <h1> Employee app </h1>
 
-<label for="empAge">Age limit : </label>
-<input #empAge type="number" id="empAge" name="empAge">
+<button type="button" (click)="flipTableStatus()">{{buttonMessage}}</button>
 <br>
 <br>
 
-<button type="button" (click)="setNewLimit(empAge.value)">Show employees younger than age limit</button>
-<br>
-<br>
 
 <table>
     <thead>
@@ -19,15 +15,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let emp of employees;let i=index;">
-            <ng-container *ngIf="emp.age < ageLimit">
-
+        <ng-container *ngIf="showTable">
+            <tr *ngFor="let emp of employees;let i=index;">
                 <td>{{i+1}}</td>
                 <td>{{emp.name}}</td>
                 <td>{{emp.age}}</td>
                 <td>{{emp.isMarried ? 'married':'single'}}</td>
-            </ng-container>
-
-        </tr>
+            </tr>
+        </ng-container>
     </tbody>
 </table>

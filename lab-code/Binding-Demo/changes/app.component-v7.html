@@ -3,10 +3,17 @@
 
 <form>
   <label for="tf1">First text field :</label><br>
+
+<!--   Template reference variable here is textinput
+  which is passed to the event binding statement -->
+
   <input #textinput type="text" id="tf1" (input)="processFirstTextField(textinput)">
 
   <br>
   <br>
+
+  <!--   Template reference variable here is languagebox
+  which is passed to the event binding statement -->
 
   <input #languagebox type="checkbox" id="progLang" value="Angular" (input)="processCheckBox(languagebox)">
   <label for="progLang"> I love Angular !</label>

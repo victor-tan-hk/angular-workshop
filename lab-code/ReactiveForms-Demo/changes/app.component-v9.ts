@@ -1,39 +1,50 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FormBuilder, FormGroup, FormArray and ReactiveFormsModule
 import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule } from '@angular/forms';
+
+// Need to import CommonModule as we are using 
+// @if and @for
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule ],
+
+  /* Include the ReactiveFormsModule and CommonModule
+  in the imports metadata */
+  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent {
 
+  profileForm: FormGroup;
+
   // Inject the FormBuilder as a service via
   // the constructor (to explore later in section on services)
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
 
-// Use the group method of FormBuilder to group the FormControls
-// within the main FormGroup
-  profileForm = this.fb.group({
+    // Use the group method of FormBuilder to group the FormControls
+    // within the main FormGroup
+    this.profileForm = this.fb.group({
 
-    // Remove validator functions temporarily to simplify demonstration
-    // of FormArrays
+      // Remove validator functions temporarily to simplify demonstration
+      // of FormArrays
 
-    firstname: [''],
-    lastname: [''],
+      firstname: [''],
+      lastname: [''],
 
-    // Create an initially empty FormArray
-    // using the FormBuilder array method
-    jobs: this.fb.array([])
+      // Create an initially empty FormArray
+      // using the FormBuilder array method
+      jobs: this.fb.array([])
 
+    });
 
+  }
 
-  });
 
   // implement logic to process submitted form data
   onSubmit() {
@@ -61,8 +72,8 @@ export class AppComponent {
   // representing info for a single new job
   createNewJob(): FormGroup {
     return this.fb.group({
-      jobTitle : [''],
-      years : [0],
+      jobTitle: [''],
+      years: [0],
     })
 
   }

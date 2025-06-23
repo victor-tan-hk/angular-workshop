@@ -1,4 +1,3 @@
-import { RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
 import { ChildComponent } from './child/child.component';
 import { ParentDataService } from './parent-data.service';
@@ -6,8 +5,7 @@ import { ParentDataService } from './parent-data.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ChildComponent],
+  imports: [ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,10 +1,12 @@
+
+// Import the inject method to use
 import { Component, inject } from '@angular/core';
+
 import { RouterOutlet } from '@angular/router';
 import { TaxCalculatorService } from './tax-calculator.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

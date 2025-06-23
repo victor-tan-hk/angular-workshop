@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FirstChildComponent explicitly
 import { FirstChildComponent } from './first-child/first-child.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  // Include FirstChildComponent as well into the imports 
+  // metatada property 
   imports: [RouterOutlet, FirstChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent {
-  
+
   parentCounter = 0;
 
   incCounter() {
@@ -21,5 +24,4 @@ export class AppComponent {
   decCounter() {
     this.parentCounter--;
   }
-
 }

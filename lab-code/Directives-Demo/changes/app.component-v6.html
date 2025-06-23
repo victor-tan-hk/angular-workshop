@@ -1,7 +1,7 @@
 <h1> My first Angular app </h1>
 
-<h4> Using i to track the index of the item in ngFor </h4>
-<h4> Using odd, even, first and last to style the buttons </h4>
+<h4> Using i to track the index of the item in &#64;for </h4>
+<h4> Using $odd, $even, $first and $last to style the buttons </h4>
 
 <!-- Ensure you enter a valid value, no error checking performed here ! -->
 <label for="buttonNum">Button number : </label>
@@ -21,7 +21,11 @@
   to access their related exported values and set them as values for 
   keys in the object assigned to ngClass directive  
 -->
-<div class="button-container" *ngFor="let emp of employees; let i = index; let isItOdd = odd; let isItEven =even; let isItFirst = first; let isItLast = last" [ngClass]="{ firstStyle : isItFirst, lastStyle : isItLast }">
-  <button [ngClass]="{ oddStyle :  isItOdd, evenStyle: isItEven}" (click)="showButtonInfo(i)">
+@for (emp of employees; track emp; let i = $index; let isItOdd = $odd; let isItEven =$even; let isItFirst = $first; let isItLast = $last) {
+  <div class="button-container" [ngClass]="{ firstStyle : isItFirst, lastStyle : isItLast }">
+    <button [ngClass]="{ oddStyle :  isItOdd, evenStyle: isItEven}" (click)="showButtonInfo(i)">
     Button # {{i}} : {{emp.name}}</button>
-</div>
+  </div>
+}
+
+

@@ -1,0 +1,17 @@
+<h1>Demonstrating Date Pipe</h1>
+
+
+
+<h3>Demonstrating date/time format for different time zones</h3>
+<p>Date/time at local time zone  : {{dateObj | date : 'long' }}</p>
+
+<!-- You can specify timezones using either GMT or UTC -->
+
+<p>Date/time in London  : {{dateObj | date : 'long' : 'UTC+1' }}</p>
+
+<p>Date/time in Paris  : {{dateObj | date : 'long' : 'UTC+2' }}</p>
+
+<p>Date/time in India  : {{dateObj | date : 'long' : 'UTC+5:30' }}</p>
+
+<p>Date/time in Japan  : {{dateObj | date : 'long' : 'UTC+9' }}</p>
+

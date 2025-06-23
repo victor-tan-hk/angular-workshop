@@ -1,0 +1,9 @@
+<h3>Inside first-child</h3>
+
+<p data-testid="showChildCounter">Child counter is: {{childCounter}}</p>
+
+
+<label for="childbox">Child text box :</label><br>
+<input #textinput type="text" id="childbox" name="childbox" (input)="processTextChange(textinput.value)">
+
+<p>Value in text box: {{textinput.value}}</p>

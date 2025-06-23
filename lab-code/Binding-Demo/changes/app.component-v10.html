@@ -1,21 +1,14 @@
 <h1> My first Angular app </h1>
 
+<label for="basicbox">Basic text box:</label><br>
+
 <!-- Standard banana-in-the-box syntax using ngModel 
-to perform two way binding -->
-<label for="secondbox">Second text box:</label><br>
-<input type="text" id="secondbox" name="secondbox" [(ngModel)]="secondBoxContent">
+to perform two way binding between the text field
+contents and the component property basicBoxContent -->
+<input type="text" id="basicbox" [(ngModel)]="basicBoxContent">
 
-<p>Value of secondBoxContent : {{secondBoxContent}}</p>
+<p>Content of basic text box : {{basicBoxContent}}</p>
 
-<!-- Variation on ngModel with explicit ngModelChange
-    Used to perform preliminary operation prior to storing
-    value in the property
--->
-<label for="thirdbox">Third text box:</label><br>
-<input type="text" id="thirdbox" name="thirdbox" [ngModel]="thirdBoxContent" (ngModelChange)="processThirdBox($event)">
-
-<p>Value of thirdBoxContent : {{thirdBoxContent}}</p>
-
-<button type="button"(click)="resetTextBoxes()">Reset content in all boxes to: {{initialValue}}</button>
+<button type="button"(click)="resetBasicTextBox()">Reset content in basic text box to: {{initialValue}}</button>
 
 

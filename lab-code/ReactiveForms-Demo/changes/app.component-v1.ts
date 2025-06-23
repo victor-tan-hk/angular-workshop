@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FormControl and ReactiveFormsModule
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+
+/*   Include the ReactiveFormsModule 
+  in the imports metadata */
   imports: [RouterOutlet, ReactiveFormsModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

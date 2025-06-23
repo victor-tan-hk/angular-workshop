@@ -1,3 +1,4 @@
+// import the inject method to use
 import { Injectable, inject } from '@angular/core';
 import { LoggerService } from './logger.service';
 

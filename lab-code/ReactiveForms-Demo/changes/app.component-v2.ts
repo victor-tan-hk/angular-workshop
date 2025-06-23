@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FormControl, FormGroup and ReactiveFormsModule
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+
+  /* Include the ReactiveFormsModule 
+  in the imports metadata */
   imports: [RouterOutlet, ReactiveFormsModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
 
 // Create a new FormGroup with nested FormControls and also

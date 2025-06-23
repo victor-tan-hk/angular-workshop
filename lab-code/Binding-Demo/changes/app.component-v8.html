@@ -32,12 +32,22 @@ expression directly in the template, instead of calling a component method -->
 <br>
 <br>
 <label for="animalbox">Enter animal that you want to view : </label>
+
 <input #animalbox type="text" id="animalbox" (input)="processAnimalBox(animalbox)">
 <br>
 <br>
+
+<!-- Display the current image name  -->
 <img [src]="'/assets/' + imageName + '.jpg'" alt="some animal" />
+
 <br>
 <h4>Options for styling text</h4>
+
+<!-- All the checkboxes below have an event binding 
+that simply flips the boolean value of one of the 
+3 boolean variables that we use for dynamic 
+binding of classes -->
+
 <input type="checkbox" id="makeLarge" name="makeLarge" value="makeLarge" (input)="isItLarge=!isItLarge">
 <label for="makeLarge">Make it large</label><br>
 <input type="checkbox" id="makeSpecial" name="makeSpecial" value="makeSpecial" (input)="isItSpecial=!isItSpecial">
@@ -46,5 +56,8 @@ expression directly in the template, instead of calling a component method -->
 <label for="makeDangerous">Make it dangerous</label><br><br>
 <hr>
 
+<!-- Use the boolean variables whose values are set from 
+the checkboxes above to perform dynamic binding of
+classes -->
 <p [class.large]="isItLarge" [class.dangerous]="isItDangerous" [class.special]="isItSpecial">Text to style</p>
 

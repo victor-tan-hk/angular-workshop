@@ -1,0 +1,13 @@
+<h1>From the root component</h1>
+
+<p>Value of parent counter : {{parentCounter}}</p>
+
+<button (click)="incCounter()">Increment</button>
+<button (click)="decCounter()">Decrement</button>
+
+<p>Text from child : {{childText}}</p>
+
+<!-- Binding parent property to child property that has @Input decorator -->
+<!-- Event binding with target event being property from child with @Output decorator -->
+<app-first-child  [childCounter]="parentCounter" (textChanged)="processChangeFromChild($event)"></app-first-child>
+

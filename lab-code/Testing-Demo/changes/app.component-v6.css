@@ -1,0 +1,29 @@
+.normal {
+    font-size: 16px;
+}
+
+.medium {
+    font-size: 30px;
+
+}
+
+.large {
+    font-size: 50px;
+} 
+
+.special {
+    font-style: italic;
+}
+
+.emphasize {
+    font-style: bold;
+}
+
+
+.danger {
+    color: red;
+}
+
+.safe {
+    color: green;
+}

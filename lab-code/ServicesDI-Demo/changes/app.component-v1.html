@@ -4,7 +4,7 @@
 <p>Sales tax is currently: {{ SST }} %</p>
 
 <label for="numitems">Number of items to purchase: </label>
-<input #numitems type="text" id="numitems">
+<input #numitems type="number" id="numitems">
 
 <button type="button" (click)="calcTotalPrice(numitems.value)">Calculate final price</button>
 

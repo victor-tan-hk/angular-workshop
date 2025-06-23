@@ -1,15 +1,13 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
 import { Hero } from './hero';
 import { LocalAPIService } from './localAPI.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

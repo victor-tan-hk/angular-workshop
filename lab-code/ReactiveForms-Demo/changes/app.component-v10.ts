@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Need to import FormGroup, FormBuilder, FormArray, FormControl and ReactiveFormsModule
 import { FormBuilder, FormGroup, FormArray, FormControl, ReactiveFormsModule } from '@angular/forms';
+
+// Need to import CommonModule as we are using 
+// @if and @for
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  
+  
+  /* Include the ReactiveFormsModule and CommonModule
+  in the imports metadata */
   imports: [RouterOutlet, ReactiveFormsModule, CommonModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

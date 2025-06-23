@@ -4,6 +4,9 @@
 
 <br>
 
+<!-- Two buttons and corresponding event bindings to 
+child component methods to increase and decrease 
+the value of the counter  --> 
 <button (click)="incCounter()">Increment</button>
 <button (click)="decCounter()">Decrement</button>
 
@@ -11,7 +14,12 @@
 <br>
 
 <label for="childbox">Child text box :</label><br>
-<input #textinput type="text" id="childbox" name="childbox" (input)="processTextChange(textinput.value)">
 
+<!-- Standard event binding to use the template 
+ reference variable textinput to pass the content of 
+ the text field to the component method 
+ processTextChange -->
+<input #textinput type="text" id="childbox"  
+(input)="processTextChange(textinput.value)">
 
 <p>Value in text box: {{textinput.value}}</p>

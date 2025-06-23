@@ -1,13 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
+
 import { Hero } from './hero';
 import { LocalAPIService } from './localAPI.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

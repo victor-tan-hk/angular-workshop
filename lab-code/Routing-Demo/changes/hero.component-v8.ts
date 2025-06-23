@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
+
 import { Hero } from '../hero';
+
 import { LocalAPIService } from '../localAPI.service';
+
 
 @Component({
   selector: 'app-hero',
@@ -20,7 +23,7 @@ export class HeroComponent implements OnInit {
 
   // This is intended to hold a single hero returned from a call to:
   // http://localhost:3000/Heroes/xx
-  singleHero!: Hero;  
+  singleHero!: Hero | null;
 
   heroId = '';
   firstname = '';
@@ -52,7 +55,6 @@ export class HeroComponent implements OnInit {
       error: (errorVal: HttpErrorResponse) => {  
         console.error('Request failed !');
         console.log("The HTTP error code is ", errorVal.status);                              
-
         // Check the HTTP error status code to determine appropriate message to show user
         // https://www.dotcom-monitor.com/blog/the-10-most-common-http-status-codes/
         // 404 most common error code -> means the server is alive, but the resource could not be located
@@ -68,14 +70,7 @@ export class HeroComponent implements OnInit {
         else 
           this.errorMessageforSingleHero = "Unknown error in network request";
 
-        this.singleHero = {
-          "id": -1,
-          "firstName": "",
-          "lastName": "",
-          "age" : -1,
-          "married" : false,
-          "job" : ""
-        };
+        this.singleHero = null;
       },
 
       // Handle completion of stream

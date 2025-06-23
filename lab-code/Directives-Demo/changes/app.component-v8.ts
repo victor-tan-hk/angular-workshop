@@ -1,14 +1,22 @@
+/* Need to import CommonModule
+which provides commonly used directives
+such as [ngClass], [ngStyle], @if, @for, etc
+ */
 import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+
 import { Employee } from './Employee';
 import { EmployeeComponent } from './employee/employee.component';
 
+
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, EmployeeComponent],
+
+  // Need to include CommonModule and EmployeeComponent
+  // in imports metadata property 
+  imports: [RouterOutlet, CommonModule, EmployeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,21 +1,29 @@
 <h1> My first Angular app </h1>
 
-<!-- Standard banana-in-the-box syntax using ngModel 
-to perform two way binding -->
-<label for="secondbox">Second text box:</label><br>
-<input type="text" id="secondbox" [(ngModel)]="secondBoxContent">
+<label for="firstbox">First text field:</label><br>
 
-<p>Value of secondBoxContent : {{secondBoxContent}}</p>
+<!-- On the same text field, we perform
+  a) Event binding to transfer contents of text field to component property
+  b) Property binding to transfer component property value to text field 
+  -->
+<input #textinput type="text" id="firstbox" 
+(input)="processFirstTextField(textinput)"
+[value]="firstTextFieldContent">
 
-<!-- Variation on ngModel with explicit ngModelChange
-    Used to perform preliminary operation prior to storing
-    value in the property
--->
-<label for="thirdbox">Third text box:</label><br>
-<input type="text" id="thirdbox" [ngModel]="thirdBoxContent" (ngModelChange)="processThirdBox($event)">
+<p>Content of first text field : {{firstTextFieldContent}}</p>
 
-<p>Value of thirdBoxContent : {{thirdBoxContent}}</p>
 
-<button type="button"(click)="resetTextBoxes()">Reset content in all boxes to: {{initialValue}}</button>
+<label for="secondbox">Second text field:</label><br>
+
+<!-- We can simplify the two way binding between the text field
+contents and a component property using ngModel with
+banana-in-the-box syntax -->
+<input type="text" id="secondbox" [(ngModel)]="secondTextFieldContent">
+
+<p>Content of second text field : {{secondTextFieldContent}}</p>
+
+<button type="button" (click)="resetTextFields()">
+Reset content in text fields to: {{initialValue}}
+</button>
 
 

@@ -2,10 +2,14 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+
+// Import provideHTTPClient to include the providers
+// metadata array
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  // Need to include this in order for the HttpClient
-  // in fakeAPI  service to work properly
+  // Make sure to include HttpClient
+  // in providers Metadata array to be used
+  // by the fakeAPI service
   providers: [provideRouter(routes), provideHttpClient()]
 };

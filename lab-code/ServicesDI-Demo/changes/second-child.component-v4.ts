@@ -3,7 +3,6 @@ import { BasicService } from '../basic.service';
 
 @Component({
   selector: 'app-second-child',
-  standalone: true,
   imports: [],
   templateUrl: './second-child.component.html',
   styleUrl: './second-child.component.css'

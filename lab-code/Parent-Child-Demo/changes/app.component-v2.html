@@ -6,5 +6,9 @@
 <button (click)="decCounter()">Decrement</button>
 
 
-<!-- Binding parent property to child property that has @Input decorator -->
-<app-first-child [childCounter]="parentCounter"></app-first-child>
+<!-- Binding parent property (parentCounter) to 
+child property (childCounter) that is marked with
+the @Input decorator -->
+<app-first-child 
+[childCounter]="parentCounter">
+</app-first-child>

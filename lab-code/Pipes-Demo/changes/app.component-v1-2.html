@@ -1,0 +1,27 @@
+<h1>Demonstrating Date Pipe</h1>
+
+
+<h3>Diplaying dates with the default format of mediumDate</h3>
+<p>Display object date using date pipe : {{dateObj | date }}</p>
+
+<p>Display numeric date using date pipe : {{ dateNumber | date }}</p>
+
+<p>Display string date using date pipe : {{ dateString | date }}</p>
+
+<h3>Demonstrating different date/time formats for the current date</h3>
+<p>Format - short : {{dateObj | date : 'short' }}</p>
+<p>Format - medium : {{dateObj | date : 'medium' }}</p>
+<p>Format - long  : {{dateObj | date : 'long' }}</p>
+<p>Format - full : {{dateObj | date : 'full' }}</p>
+
+<h3>Demonstrating different date only formats for the current date</h3>
+<p>Format - short : {{dateObj | date : 'shortDate' }}</p>
+<p>Format - medium : {{dateObj | date : 'mediumDate' }}</p>
+<p>Format - long  : {{dateObj | date : 'longDate' }}</p>
+<p>Format - full : {{dateObj | date : 'fullDate' }}</p>
+
+<!-- We can also repeat this example above for the different time only formats -->
+
+<h3>Demonstrating custom date/time formats </h3>
+<p>For current date - dd/MM/yy : {{dateObj | date : 'dd/MM/yy' }}</p>
+<p>For string date - dd/MM/yy hh:mm:ss : {{dateString | date : 'dd/MM/yy  hh:mm:ss' }}</p>

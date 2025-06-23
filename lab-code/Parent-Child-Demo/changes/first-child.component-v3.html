@@ -4,6 +4,12 @@
 
 
 <label for="childbox">Child text box :</label><br>
-<input #textinput type="text" id="childbox" name="childbox" (input)="processTextChange(textinput.value)">
+
+<!-- Standard event binding to use the template 
+ reference variable textinput to pass the content of 
+ the text field to the component method 
+ processTextChange -->
+<input #textinput type="text" id="childbox"  
+(input)="processTextChange(textinput.value)">
 
 <p>Value in text box: {{textinput.value}}</p>

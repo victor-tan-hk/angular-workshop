@@ -3,13 +3,16 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
+/*   With template reference variable, the parameter of the method
+  is already of the correct type such as HTMLInputElement
+  no need to further cast it as in the case of passing $event
+ */
   processFirstTextField(hie: HTMLInputElement) {
     console.log("The content of first text field is : " + hie.value);
   }

@@ -1,27 +1,33 @@
-<h1> My first Angular app </h1>
-
-<h4> Using i to track the index of the item in ngFor </h4>
-
-<!-- Ensure you enter a valid value, no error checking performed here ! -->
-<label for="buttonNum">Button number : </label>
-<input #buttonNum type="number" id="buttonNum" name="buttonNum">
+<label for="empAge">Age limit : </label>
+<input #empAge type="number" id="empAge" name="empAge">
+<br>
 <br>
 
-<!-- Ensure you enter a valid value, no error checking performed here ! -->
-<label for="newName">New name : </label>
-<input #newName type="text" id="newName" name="newName">
+<button type="button" (click)="setNewLimit(empAge.value)">Show employees younger than age limit</button>
+<br>
 <br>
 
-<button (click)="changeName(buttonNum.value, newName.value)">Make change</button>
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Marital Status</th>
+        </tr>
+    </thead>
+    <tbody>
 
-<p>{{message}}</p>
-
-<!-- Use local variable i to access index into collection -->
-@for (emp of employees; track emp; let i = $index) {
-  <div class="button-container">
-    <button (click)="showButtonInfo(i)">
-    Button # {{i}} : {{emp.name}}</button>
-  </div>
-}
-
-
+        @for (emp of employees; track emp; let i = $index) {
+            @if (emp.age < ageLimit) {
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.age}}</td>
+                    <td>{{emp.isMarried ? 'married':'single'}}</td>
+                </tr>
+            }
+        }
+    
+    </tbody>
+</table>

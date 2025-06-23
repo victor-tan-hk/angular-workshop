@@ -1,3 +1,5 @@
 <h1> Employee app </h1>
 
-<app-employee *ngFor="let emp of employees; let i=index;" [myEmployee]="emp" [employeeNum]="i" ></app-employee>
+@for (emp of employees; track emp; let i = $index) {
+    <app-employee [myEmployee]="emp" [employeeNum]="i" ></app-employee>
+}

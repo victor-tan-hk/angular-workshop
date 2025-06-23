@@ -1,24 +1,31 @@
+
+/* Need to import the following modules
+- Input in order to use  the @Input decorator 
+- Output in order to use the @Output decorator
+- EventEmitter in order to use the EventEmitter module
+*/
+import { PropertyRead } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-first-child',
-  standalone: true,
   imports: [],
   templateUrl: './first-child.component.html',
   styleUrl: './first-child.component.css'
 })
 export class FirstChildComponent {
 
-
-/*   All properties marked with @Input will be bound 
-  to a parent component property and receive data from it */
-  @Input() 
+  /*   All properties marked with @Input will be bound 
+    to a parent component property and receive data from it */
+  @Input()
   childCounter: number = 0;
 
-  // no longer need this
-  // @Output() 
+  /*   This is no longer needed */
+  // @Output()
   // textChanged: EventEmitter<string> = new EventEmitter();
 
+  /*   We now only have one @Output property to 
+  transmit newly updated counter value back to parent */
   @Output()
   counterChanged: EventEmitter<number> = new EventEmitter();
 
@@ -26,10 +33,19 @@ export class FirstChildComponent {
   childText = '';
 
   processTextChange(value: string) {
-    // No longer need to do this
-    //this.textChanged.emit(value);
+
+    /*  No longer need to do this */
+    // this.textChanged.emit(value);
+
+    /* We can just change the value of the 
+    normal property */
     this.childText = value;
+
   }
+
+  /*   Now we just change the value of the normal property 
+    directly and transmit this back as an event to the 
+    parent template via counterChanged*/
 
   incCounter() {
     this.childCounter++;
@@ -40,6 +56,8 @@ export class FirstChildComponent {
     this.childCounter--;
     this.counterChanged.emit(this.childCounter);
   }
+
+
 
 
 }
