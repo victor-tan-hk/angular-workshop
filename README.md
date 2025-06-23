@@ -1,4 +1,4 @@
 # Front-end Web Application Development with Angular
-## Nov 2024
-FSI training
+## June 2025
+2u1i training
 
