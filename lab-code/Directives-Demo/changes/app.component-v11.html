@@ -4,13 +4,13 @@
 <input type="text" id="animal" name="animal" [(ngModel)]="animal">
 
 @switch (animal) {
-  @case('cat') 
-    { <p>Thats a moody one !</p> } 
-  @case('dog') 
+  @case('cat')
+    { <p>Thats a moody one !</p> }
+  @case('dog')
     { <p>Thats a furry one !</p> }
-  @case('tiger') 
+  @case('tiger')
     { <p>Thats a dangerous one !</p> }
-  @default 
+  @default
     { <p>Never heard of that animal before</p> }
 }
 
@@ -19,19 +19,21 @@
 <label for="cars">Choose a car:</label>
 
 <select [(ngModel)]="selectedCar">
-    <option *ngFor="let car of cars;" [value]="car">{{car}}</option>
+  @for (car of cars; track car) {
+    <option [value]="car">{{car}}</option>
+  }
 </select>
 
 @switch (selectedCar) {
-  @case('Jaguar') 
-    { <p>Thats a British car !</p> } 
-  @case('Toyota') 
+  @case('Jaguar')
+    { <p>Thats a British car !</p> }
+  @case('Toyota')
     { <p>Thats a Japanese car !</p> }
-  @case('Renault') 
+  @case('Renault')
     { <p>Thats a French car !</p> }
-  @case('Mercedes') 
-    { <p>Thats a German car !</p> }    
-  @default 
+  @case('Mercedes')
+    { <p>Thats a German car !</p> }
+  @default
     { <p>Never heard of that car before</p> }
 }
 
